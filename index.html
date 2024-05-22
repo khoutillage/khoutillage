@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Produits - KOUTILLAGE</title>
+    <!-- Intégration de Bootstrap (optionnel) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Intégration de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Styles CSS personnalisés -->
+    <style>
+        body {
+            color: #222;
+            background: #fff;
+        }
+        a {
+            color: #0033cc;
+        }
+        body.dark-mode {
+            color: #eee;
+            background: #333333;
+        }
+        body.dark-mode a {
+            color: #809fff;
+        }
+        /* Style pour les cadres des produits en mode clair */
+        .card-light {
+            border: 1px solid #ccc; /* Couleur de la bordure en mode clair */
+        }
+        /* Style pour les cadres des produits en mode sombre */
+        .card-dark {
+            border: 1px solid #555; /* Couleur de la bordure en mode sombre */
+            background-color: #333333; /* Couleur de fond en mode sombre */
+        }
+        /* Style pour redimensionner les images des produits */
+        .product-image {
+            width: 100%;
+            height: 200px; /* Hauteur fixe pour toutes les images des produits */
+            object-fit: cover; /* Ajuster la taille de l'image pour remplir le conteneur tout en conservant les proportions */
+        }
+        .mode-toggle-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="site.html">KOUTILLAGE</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="site.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="produit.html">Découvrir nos produits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-link mode-toggle-btn" onclick="toggleDarkMode()">
+                            <i id="mode-icon" class="fas fa-sun text-white"></i> <!-- Icône de soleil pour le mode clair -->
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section des produits -->
+    <section class="container mt-5">
+        <h2>Nos Produits</h2>
+        <div class="row">
+            <!-- Produit 1 -->
+            <div class="col-md-4">
+                <div class="card card-light">
+                    <img src="produit1.jpeg" alt="Produit 1" class="card-img-top product-image">
+                    <div class="card-body">
+                        <h5 class="card-title">Produit 1</h5>
+                        <!-- Bouton pour afficher les détails -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#produit1Modal">
+                            Afficher les détails
+                        </button>
+                    </div>
+                    <div class="modal fade" id="produit1Modal" tabindex="-1" role="dialog" aria-labelledby="produit1ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header bg-dark text-white">
+                                    <h5 class="modal-title" id="produit1ModalLabel">Détails du Produit 1</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body text-dark">
+                                    <!-- Contenu des détails du Produit 1 -->
+                                    <p>Description détaillée du Produit 1.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Produit 2 -->
+            <div class="col-md-4">
+                <div class="card card-light">
+                    <img src="produit2.jpg" alt="Produit 2" class="card-img-top product-image">
+                    <div class="card-body">
+                        <h5 class="card-title">Produit 2</h5>
+                        <!-- Bouton pour afficher les détails -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#produit2Modal">
+                            Afficher les détails
+                        </button>
+                    </div>
+                    <div class="modal fade" id="produit2Modal" tabindex="-1" role="dialog" aria-labelledby="produit2ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header bg-dark text-white">
+                                    <h5 class="modal-title" id="produit2ModalLabel">Détails du Produit 2</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body text-dark">
+                                    <!-- Contenu des détails du Produit 2 -->
+                                    <p>Description détaillée du Produit 2.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Produit 3 -->
+            <div class="col-md-4">
+                <div class="card card-light">
+                    <img src="produit3.jpg" alt="Produit 3" class="card-img-top product-image">
+                    <div class="card-body">
+                        <h5 class="card-title">Produit 3</h5>
+                        <!-- Bouton pour afficher les détails -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#produit3Modal">
+                            Afficher les détails
+                        </button>
+                    </div>
+                    <div class="modal fade" id="produit3Modal" tabindex="-1" role="dialog" aria-labelledby="produit3ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header bg-dark text-white">
+                                    <h5 class="modal-title" id="produit3ModalLabel">Détails du Produit 3</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body text-dark">
+                                    <!-- Contenu des détails du Produit 3 -->
+                                    <p>Description détaillée du Produit 3.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intégration de Bootstrap JavaScript (optionnel) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Script JavaScript pour le mode sombre -->
+    <script>
+        // Check if the user has a preference stored in localStorage
+        const storedMode = localStorage.getItem('darkMode');
+        const body = document.body;
+        const modeIcon = document.querySelector('#mode-icon');
+
+        // If a preference is stored, apply it to the body
+        if (storedMode) {
+            body.classList.add('dark-mode');
+            modeIcon.classList.remove('fa-sun');
+            modeIcon.classList.add('fa-moon');
+            modeIcon.style.color = 'white'; // Change the color of the icon
+        }
+
+        function toggleDarkMode() {
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                modeIcon.classList.remove('fa-sun');
+                modeIcon.classList.add('fa-moon');
+                modeIcon.style.color = 'white'; // Change the color of the icon
+                localStorage.setItem('darkMode', 'true');
+            } else {
+                modeIcon.classList.remove('fa-moon');
+                modeIcon.classList.add('fa-sun');
+                modeIcon.style.color = ''; // Reset the color of the icon
+                localStorage.removeItem('darkMode');
+            }
+        }
+    </script>
+</body>
+</html>
