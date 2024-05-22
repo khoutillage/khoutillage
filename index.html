@@ -3,69 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Produits - KOUTILLAGE</title>
+    <title>Accueil - KOUTILLAGE</title>
     <!-- Intégration de Bootstrap (optionnel) -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Intégration de Font Awesome (pour les icônes) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Intégration de css.gg -->
-    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/dark-mode.css' rel='stylesheet'>
     <!-- Styles CSS personnalisés -->
-    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            color: #222;
-            background: #fff;
+        .mode-toggle-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
         }
-        a {
-            color: #0033cc;
-        }
-        body.dark-mode {
-            color: #eee;
-            background: #333333;
-        }
-        body.dark-mode a {
-            color: #809fff;
-        }
-        /* Style pour les cadres des produits en mode clair */
-        .card-light {
-            border: 1px solid #ccc; /* Couleur de la bordure en mode clair */
-        }
-        /* Style pour les cadres des produits en mode sombre */
-        .card-dark {
-            border: 1px solid #555; /* Couleur de la bordure en mode sombre */
-            background-color: #333333; /* Couleur de fond en mode sombre */
-        }
-        /* Style pour redimensionner les images des produits */
-        .product-image {
-            width: 100%;
-            height: 200px; /* Hauteur fixe pour toutes les images des produits */
-            object-fit: cover; /* Ajuster la taille de l'image pour remplir le conteneur tout en conservant les proportions */
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
         }
     </style>
 </head>
 <body>
-    <!-- Barre de navigation -->
+    <!-- Navbar Bootstrap -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">KOUTILLAGE</a>
+            <a class="navbar-brand" href="site.html">KOUTILLAGE</a>
+            <!-- Insérez ici votre bouton de navigation mobile si nécessaire -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Accueil</a>
-                    </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Découvrir nos produits</a>
+                        <a class="nav-link" href="site.html">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                     <li class="nav-item">
                         <button class="btn btn-link mode-toggle-btn" onclick="toggleDarkMode()">
-                            <i id="mode-icon" class="fas fa-sun text-white"></i> <!-- Icône de soleil pour le mode clair -->
+                            <i id="mode-icon" class="far fa-moon"></i> <!-- Icône de lune pour le mode sombre -->
                         </button>
                     </li>
                 </ul>
@@ -73,112 +48,12 @@
         </div>
     </nav>
 
-    <!-- Section des produits -->
-    <section class="container mt-5">
-        <h2>Nos Produits</h2>
-        <div class="row">
-            <!-- Produit 1 -->
-            <div class="col-md-4">
-                <div class="card card-light">
-                    <img src="produit1.jpeg" alt="Produit 1" class="card-img-top product-image">
-                    <div class="card-body">
-                        <h5 class="card-title">Produit 1</h5>
-                        <!-- Bouton pour afficher les détails -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#produit1Modal">
-                            Afficher les détails
-                        </button>
-                    </div>
-                    <!-- Modal pour les détails du Produit 1 -->
-                    <div class="modal fade" id="produit1Modal" tabindex="-1" role="dialog" aria-labelledby="produit1ModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header bg-dark text-white">
-                                    <h5 class="modal-title" id="produit1ModalLabel">Détails du Produit 1</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <!-- Contenu des détails du Produit 1 -->
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis deserunt repellat, ut laborum praesentium pariatur alias fugiat commodi officia quod?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Produit 2 -->
-            <div class="col-md-4">
-                <div class="card card-light">
-                    <img src="produit2.jpeg" alt="Produit 2" class="card-img-top product-image">
-                    <div class="card-body">
-                        <h5 class="card-title">Produit 2</h5>
-                        <!-- Bouton pour afficher les détails -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#produit2Modal">
-                            Afficher les détails
-                        </button>
-                    </div>
-                    <!-- Modal pour les détails du Produit 2 -->
-                    <div class="modal fade" id="produit2Modal" tabindex="-1" role="dialog" aria-labelledby="produit2ModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header bg-dark text-white">
-                                    <h5 class="modal-title" id="produit2ModalLabel">Détails du Produit 2</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <!-- Contenu des détails du Produit 2 -->
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis deserunt repellat, ut laborum praesentium
-                                    <!-- Contenu des détails du Produit 2 -->
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis deserunt repellat, ut laborum praesentium pariatur alias fugiat commodi officia quod?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Produit 3 -->
-            <div class="col-md-4">
-                <div class="card card-light">
-                    <img src="produit3.jpeg" alt="Produit 3" class="card-img-top product-image">
-                    <div class="card-body">
-                        <h5 class="card-title">Produit 3</h5>
-                        <!-- Bouton pour afficher les détails -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#produit3Modal">
-                            Afficher les détails
-                        </button>
-                    </div>
-                    <!-- Modal pour les détails du Produit 3 -->
-                    <div class="modal fade" id="produit3Modal" tabindex="-1" role="dialog" aria-labelledby="produit3ModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header bg-dark text-white">
-                                    <h5 class="modal-title" id="produit3ModalLabel">Détails du Produit 3</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <!-- Contenu des détails du Produit 3 -->
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis deserunt repellat, ut laborum praesentium pariatur alias fugiat commodi officia quod?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Section de contenu principal -->
+    <section class="container py-5">
+        <h1 class="text-center mb-4">Bienvenue chez KOUTILLAGE</h1>
+        <p class="lead text-center mb-4">Découvrez nos derniers produits</p>
+        <!-- Lien vers site.html -->
+        <p class="text-center"><a href="site.html" class="btn btn-primary btn-lg">Découvrir nos produits</a></p>
     </section>
 
     <!-- Pied de page -->
